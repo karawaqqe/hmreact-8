@@ -10,8 +10,7 @@ export const App = () => {
     neutral: 0,
     bad: 0,
   });
-
-  // Обробник кліку по кнопці
+  
   const handleFeedback = (type) => {
     setState((prevState) => ({
       ...prevState,
@@ -19,12 +18,10 @@ export const App = () => {
     }));
   };
 
-  // Обчислення загальної кількості
   const countTotalFeedback = () => {
     return state.good + state.neutral + state.bad;
   };
 
-  // Обчислення відсотка позитивних
   const countPositiveFeedbackPercentage = () => {
     const total = countTotalFeedback();
     return total ? Math.round((state.good / total) * 100) : 0;
